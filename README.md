@@ -36,3 +36,12 @@
 - But we cannot do it for particular ticket as tickets which are added recently will not be there.
 - To get this done we have to explicitly specify to next to tell what id(tickets) has been added there so that it can generate static pages for those
 ## Dynamic rendering
+
+## Not-found
+- we can create not found pages for particular layout, different for different pages
+- create `not-found.jsx` file and write the code inside that, it will be shown when ever there is a page which is not found.
+
+## loading state
+- To show loading state for pages which are in pages, does not effect element in layout like navbar,sidebar, which does not depend on any data to be loaded.
+- we can create suspence boundary.
+- to do that we have wrap component around suspence boundary.
