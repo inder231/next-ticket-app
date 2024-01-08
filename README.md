@@ -28,3 +28,11 @@
 ## Dynamic routes in nextjs
 - folder structure
   - [id]  => we use square brackets to define a dynamic route and create page.tsx file inside that folder where we can access the `id` of `[id]` using `props.params` object.
+
+## Static sites generation
+- serving pages statically whose data does not change.
+
+- But as our application data will be changing frequently for tickets listing page, so it cannot be statically generated
+- But we cannot do it for particular ticket as tickets which are added recently will not be there.
+- To get this done we have to explicitly specify to next to tell what id(tickets) has been added there so that it can generate static pages for those
+## Dynamic rendering

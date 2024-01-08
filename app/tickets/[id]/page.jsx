@@ -1,9 +1,26 @@
+import { notFound } from 'next/navigation'
+export const dynamicParams = true;
+
+// this function will help to generate static pages
+export async function generateStaticParams() {
+  const res = await fetch("http://localhost:4000/tickets");
+  const tickets = await res.json();
+  // return array with property `id` as mentioned in dynamic params.
+  return tickets.map((ticket) => {
+    id: ticket.id;
+  });
+}
+
 async function getTicket(id) {
   const res = await fetch("http://localhost:4000/tickets/" + id, {
     next: {
       revalidate: 60,
     },
   });
+  if(!res.ok){
+    // show 404 page is the ticket with propvided id is not found.
+     notFound();
+  }
   return res.json();
 }
 
