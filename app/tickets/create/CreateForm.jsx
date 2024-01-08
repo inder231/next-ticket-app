@@ -31,7 +31,7 @@ export default function CreateForm() {
     if (response.status === 201) {
       // router.refresh to show new ticket on tickets page if not showing on adding
       // this refresh will reduce the calling of get tickets on tickets page.
-      // router.refresh();
+      router.refresh()
       router.push("/tickets");
     }
   };
